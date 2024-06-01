@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="cal">
+            <input id="no1" type="number" placeholder="Enter 1st number">
+            <input id="no2" type="number" placeholder="Enter 2nd number">
+            <select id="cal">
+                <option value="select">select</option>
+                <option value="plus">+</option>
+                <option value="min">-</option>
+                <option value="mul">*</option>
+                <option value="divi">/</option>
+            </select>
+            <input type="text" id="result"  readonly/>
+        </div>
+    </div>
+    <script>
+        document.getElementById('cal').addEventListener('change', function() {
+            var n1 = parseFloat(document.getElementById('no1').value);
+            var n2 = parseFloat(document.getElementById('no2').value);
+            var operator = document.getElementById('cal').value;
+            var result;
+
+            
+            if (isNaN(n1) || isNaN(n2)) {
+                result = 'Invalid input';
+            } else {
+                if (operator === 'plus') {
+                    result = n1 + n2;
+                } else if (operator === 'min') {
+                    result = n1 - n2;
+                } else if (operator === 'mul') {
+                    result = n1 * n2;
+                } else if (operator === 'divi') {
+                    if (n2 !== 0) {
+                        result = n1 / n2;
+                    } else {
+                        result = 'Cannot divide by zero';
+                    }
+                } else {
+                    result = 'Please select an operator';
+                }
+            }
+
+            document.getElementById('result').value = result;
+        });
+    </script>
+</body>
+</html>
