@@ -5,6 +5,8 @@ body{
     align-items: center;
     height: 100vh;
     background-color: #ACD793;
+    background-size: cover;
+
 }
 
 .container{
@@ -42,4 +44,36 @@ button{
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    button{
+        width: 50px;
+        height: 50px;
+        border-radius: 7px;
+        border: none;
+        background-color:  #FF7D29;
+        color: #FFEEA9;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .container{
+        font-family: 'Tahoma',sans-serif;
+        background-color: #FEFFD2;
+        border-radius: 15px;
+        max-width: 300px;
+        overflow: hidden;
+    }
+    
+    .display-box{
+        width: 100%;
+        padding: 20px;
+        font-size: 3rem;
+        background-color: #FEFFD2;
+        color: #FF7D29;
+        text-align: left;
+        border: none;
+    }
+    
 }
